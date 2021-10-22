@@ -1,4 +1,4 @@
-package com.example.myfirstapplication;
+package com.example.pokedex;
 
 import org.junit.Test;
 
