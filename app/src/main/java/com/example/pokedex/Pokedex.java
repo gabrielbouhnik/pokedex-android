@@ -65,6 +65,9 @@ public class Pokedex extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("INSERT INTO pokedex VALUES('Pinsir',127,7,0,NULL);");
         sqLiteDatabase.execSQL("INSERT INTO pokedex VALUES('Tauros',128,5,0,NULL);");
         sqLiteDatabase.execSQL("INSERT INTO pokedex VALUES('Lapras',131,3,14,NULL);");
+        sqLiteDatabase.execSQL("INSERT INTO pokedex VALUES('Dratini',147,15,0,NULL);");
+        sqLiteDatabase.execSQL("INSERT INTO pokedex VALUES('Dragonair',148,15,0,147);");
+        sqLiteDatabase.execSQL("INSERT INTO pokedex VALUES('Dragonite',149,15,6,148);");
         sqLiteDatabase.execSQL("INSERT INTO pokedex VALUES('Chikorita',152,1,0,NULL);");
         sqLiteDatabase.execSQL("INSERT INTO pokedex VALUES('Bayleaf',153,1,0,152);");
         sqLiteDatabase.execSQL("INSERT INTO pokedex VALUES('Meganium',154,1,0,153);");
@@ -80,11 +83,15 @@ public class Pokedex extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("INSERT INTO pokedex VALUES('Marill',183,3,18,NULL);");
         sqLiteDatabase.execSQL("INSERT INTO pokedex VALUES('Azumarill',184,3,18,183);");
         sqLiteDatabase.execSQL("INSERT INTO pokedex VALUES('Sudowoodo',185,9,0,NULL);");
+        sqLiteDatabase.execSQL("INSERT INTO pokedex VALUES('Sunkern',191,1,0,NULL);");
+        sqLiteDatabase.execSQL("INSERT INTO pokedex VALUES('Sunflora',192,1,0,191);");
         sqLiteDatabase.execSQL("INSERT INTO pokedex VALUES('Murkrow',198,17,6,NULL);");
         sqLiteDatabase.execSQL("INSERT INTO pokedex VALUES('Misdreavus',200,13,NULL,NULL);");
         sqLiteDatabase.execSQL("INSERT INTO pokedex VALUES('Shuckle',213,9,7,NULL);");
         sqLiteDatabase.execSQL("INSERT INTO pokedex VALUES('Heracross',214,11,7,NULL);");
         sqLiteDatabase.execSQL("INSERT INTO pokedex VALUES('Sneasel',215,17,14,NULL);");
+        sqLiteDatabase.execSQL("INSERT INTO pokedex VALUES('Slugma',218,2,0,NULL);");
+        sqLiteDatabase.execSQL("INSERT INTO pokedex VALUES('Magcargot',219,2,9,218);");
         sqLiteDatabase.execSQL("INSERT INTO pokedex VALUES('Corsola',222,3,9,NULL);");
         sqLiteDatabase.execSQL("INSERT INTO pokedex VALUES('Delibird',225,14,6,NULL);");
         sqLiteDatabase.execSQL("INSERT INTO pokedex VALUES('Skarmory',227,16,6,NULL);");

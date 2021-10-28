@@ -8,11 +8,17 @@
         tools:context=".MainActivity" android:id="@+id/MainConstraintLayout" android:background="#FFFFFF">
 
     <TextView
-            android:text="Type2:"
+            android:text="Type 2:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/type2textView"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="84dp" android:layout_marginLeft="136dp" android:layout_marginStart="136dp"/>
+            android:layout_marginTop="70dp" android:layout_marginLeft="136dp" android:layout_marginStart="136dp"/>
+    <TextView
+            android:text="Evolution:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/evolutiontextView"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="68dp" android:layout_marginLeft="260dp" android:layout_marginStart="260dp"/>
     <Button
             android:text="Search"
             android:layout_width="wrap_content"
@@ -24,11 +30,22 @@
     <Button
             android:text="Reset"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/searchButton"
+            android:layout_height="wrap_content" android:id="@+id/ResetButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.628" app:layout_constraintVertical_bias="0.377"
             app:backgroundTint="#03A9F4" app:layout_constraintStart_toStartOf="parent"/>
+    <Spinner
+            android:layout_height="30dp" android:layout_width="85dp"
+            android:id="@+id/type2Spinner"
+            android:background="#E6E8E8E8" android:foreground="#0FC5C5C5"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="visible" tools:visibility="visible" android:dropDownWidth="wrap_content"
+            android:dropDownSelector="@color/white" android:duplicateParentState="true"
+            app:layout_constraintVertical_bias="0.151" android:spinnerMode="dropdown"
+            android:layout_marginLeft="148dp"
+            android:layout_marginStart="148dp"/>
     <Spinner
             android:layout_height="30dp" android:layout_width="85dp"
             android:id="@+id/type1Spinner"
@@ -42,13 +59,13 @@
             android:layout_marginStart="36dp"/>
     <Spinner
             android:layout_height="30dp" android:layout_width="85dp"
-            android:id="@+id/type2Spinner"
+            android:id="@+id/evolutionSpinner"
             android:background="#E6E8E8E8" android:foreground="#0FC5C5C5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
             android:visibility="visible" tools:visibility="visible" android:dropDownWidth="wrap_content"
             android:dropDownSelector="@color/white" android:duplicateParentState="true"
-            android:layout_marginEnd="172dp" android:layout_marginRight="172dp"
+            android:layout_marginEnd="52dp" android:layout_marginRight="52dp"
             app:layout_constraintVertical_bias="0.151" android:spinnerMode="dropdown"/>
     <ScrollView
             android:id="@+id/scrollView"
@@ -56,7 +73,7 @@
             android:layout_height="350dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="44dp"
+            android:layout_marginTop="12dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -77,11 +94,11 @@
         </LinearLayout>
     </ScrollView>
     <TextView
-            android:text="Type1:"
+            android:text="Type 1:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/type1textView"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="84dp" android:layout_marginLeft="36dp" android:layout_marginStart="36dp"/>
+            android:layout_marginTop="70dp" android:layout_marginLeft="36dp" android:layout_marginStart="36dp"/>
     <Switch
             android:text="Display types"
             android:layout_width="wrap_content"

@@ -14,18 +14,22 @@ import static android.database.sqlite.SQLiteDatabase.openDatabase;
 
 public class MainActivity extends AppCompatActivity  implements AdapterView.OnItemSelectedListener{
     Button searchButton;
+    Button resetButton;
     TextView dataTextView;
     SQLiteDatabase mydb;
     List<String> types;
     Spinner type1Spinner;
     Spinner type2Spinner;
+    Spinner evolutionSpinner;
     Switch typeSwitch;
 
     private void initButtons(){
         searchButton = findViewById(R.id.SearchButton);
+        resetButton = findViewById(R.id.ResetButton);
         dataTextView = findViewById(R.id.dataTextView);
         type1Spinner = findViewById(R.id.type1Spinner);
         type2Spinner = findViewById(R.id.type2Spinner);
+        evolutionSpinner = findViewById(R.id.evolutionSpinner);
         typeSwitch = findViewById(R.id.typeSwitch);
         Pokedex pokedex = new Pokedex(this);
         mydb = pokedex.getReadableDatabase();
@@ -45,6 +49,7 @@ public class MainActivity extends AppCompatActivity  implements AdapterView.OnIt
         type1Spinner.setOnItemSelectedListener(this);
         type2Spinner.setAdapter(aa);
         type2Spinner.setOnItemSelectedListener(this);
+        evolutionSpinner.setAdapter(new ArrayAdapter(this,android.R.layout.simple_spinner_item, new String[]{" ", "Can evolve", "Cannot evolve"}));
         searchButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -60,6 +65,15 @@ public class MainActivity extends AppCompatActivity  implements AdapterView.OnIt
                     }
                 }
                 dataTextView.setText(res);
+            }
+        });
+        resetButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                type1Spinner.setSelection(0);
+                type2Spinner.setSelection(0);
+                evolutionSpinner.setSelection(0);
+                dataTextView.setText("");
             }
         });
     }
@@ -90,6 +104,21 @@ public class MainActivity extends AppCompatActivity  implements AdapterView.OnIt
             else {
                 result += " where (type1=" + type2 + " or type2=" + type2 + ")";
                 cond = true;
+            }
+        }
+        String evolution = (String) evolutionSpinner.getSelectedItem();
+        if (evolution.length() > 2){
+            if (cond)
+                result += " and ";
+            else {
+                result += " where ";
+                cond = true;
+            }
+            if (evolution.startsWith("Can ")){
+                result += "id in (select prevEvolution from pokedex)";
+            }
+            else{
+                result += "id not in (select prevEvolution from pokedex where prevEvolution is not null)";
             }
         }
         System.out.println(result);
